@@ -80,15 +80,15 @@
 
             $(".letter-button").on("click", function () {
                 if (letterBtn === (ansLetter[i])) {
-                    //undefined-- slvd
-                    console.log(slvd);
+                    dash[i] = ansLetter[i]
+                    $("#word").html("<" + " "+ dash[i] +" " + ">");
+                   // console.log(slvd);
                 }
-                else if (document.getElementById("creeper").style.right += "100px") {
-
+                else if (letterBtn !== (ansLetter[i])) {
+                    document.getElementById("creeper").style.right += "100px"
                 }
             })
-            //how do i overwrite line78
-            $("#word").append("<" + " " + slvd + " " + ">");
+            
 
 
 
