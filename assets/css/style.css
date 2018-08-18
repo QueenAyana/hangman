@@ -23,17 +23,43 @@ body{
 }
 .inst{
     font-size: 24pt;
+    color: darkslateblue;
     font-family: fantasy;
+    background-color: antiquewhite;
     padding: 40px 0 40px 0;
     position: relative;
     text-align: center;
     border: 5px solid;
-    border-color: rgb(90,230,243)
+    border-color: rgb(90,230,243);
+    border-radius: 15%;
+    width: 1500px;
+    left: 10%;
+    margin-top: 25px;
+    letter-spacing: .5px
 }
 .stats{
     font-size: 24pt;
+    color: darkslateblue;
     font-family: fantasy;
-    margin: 5px 0 40px 0;
+    background-color: antiquewhite;
+    padding: 40px 0 40px 0;
     position: relative;
     text-align: center;
+    border: 5px solid;
+    border-color: rgb(90,230,243);
+    border-radius: 15%;
+    width: 1500px;
+    left: 10%;
+    margin-top: 25px;
+}
+#alex{
+    position: relative;
+    right: 15%;
+}
+#creeper{
+    position: relative;
+    bottom: 50px
+}
+.game{
+    margin: 20px 0 40px 0;
 }

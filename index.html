@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,95 @@
     <title>Minecraft Hangman</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/javascript/game.js">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 </head>
+
 <body>
     <header>
         <img id="headimg" src="assets/images/minecraft-header.jpg" alt="">
         <img id="headimg2" src="assets/images/HANGMAN-GAME.png" alt="">
     </header>
-    <div class = "inst">
+    <div class="inst">
         Press Any Key To Get Started!!!
+
+        <p>
+            Test your knowlege of common Minecraft terms. Click the letters that you think will spell out the word. If you get the word
+            right the creeper will be slain! If you fail to get the word right the creeper will explode on our dear heros.
+        </p>
     </div>
     <div class="stats">
-        Wins
+        <div class="game">
+            <button id="btn">Start the game!</button>
+            <p>
+                Here is your word.
+            </p>
+            <div id="word">
+            </div>
+            <div id="hint">
+            </div>
+            <div id="buttons">
+            </div>
+        </div>
+        <img id="alex" src="assets/images/alex-steve.png" alt="">
+        <img id="creeper" src="assets/images/creaper.jpg" alt="">
+
     </div>
-    
+
+
 </body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var words = ["steve", "alex", "enderman", "pickaxe", "diamond", "zombievillager", "silverfish", "neather", "ghast", "wither", "enderpearl", "emerald", "mending"];
+        var hints = ["Our male hero's name.", "Our female hero's name.", "A very tall mob that's quite shy.", "Isnt it iron ... ?", "Ooooh! shiny!", "This poor guy needs a golden apple.", "Why must their eggs look like stone", "Ummm ... where is the brimstone and sulfer?", "These mobs sound like a dying cat.", "Run or hide my three heads will see you!", "Throw me and enjoy the ride!", "Villagers love these!", "This enchantment will help keep your gear all fixed up."];
+        var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+
+        for (var i = 0; i < letters.length; i++) {
+            var letterBtn = $("<button>");
+            letterBtn.addClass("letter-button letter letter-button-color");
+            letterBtn.text(letters[i]);
+            letterBtn.attr("data-letter", letters[i]);
+            $("#buttons").append(letterBtn);
+        }
+
+        $("#btn").on("click", function () {
+            console.log("START BUTTON CLICKED")
+            document.onkeyup = gameStart();
+        });
+        var gameStart = function startGame() {
+            var answer = words[Math.floor(Math.random() * words.length)];
+            var wordLength = answer.length;
+            var guessAmmount = (wordLength + 5);
+            console.log(answer)
+            console.log(wordLength);
+            console.log(guessAmmount);
+            var ansLetter = answer.split("");
+            console.log(ansLetter);
+            var dash = answer.replace(/[a-zA-Z]/g, '-' + ' ');
+            //var slvd = dash.replace(dash[i], ansLetter[i])
+
+            $("#word").append("<" + " " + dash + " " + ">");
+
+            $(".letter-button").on("click", function () {
+                if (letterBtn === (ansLetter[i])) {
+                    //undefined-- slvd
+                    console.log(slvd);
+                }
+                else if (document.getElementById("creeper").style.right += "100px") {
+
+                }
+            })
+            //how do i overwrite line78
+            $("#word").append("<" + " " + slvd + " " + ">");
+
+
+
+
+        };
+            
+        
+    })
+</script>
+
 </html>
