@@ -48,54 +48,99 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
-        var words = ["steve", "alex", "enderman", "pickaxe", "diamond", "zombievillager", "silverfish", "neather", "ghast", "wither", "enderpearl", "emerald", "mending"];
+        var words = ["STEVE", "ALEX", "ENDERMAN", "PICKAXE", "DIAMOND", "ZOMBIEVILLAGER", "SILVERFISH", "NEATHER", "GHAST", "WITHER", "ENDERPEARL", "EMERALD", "MENDING"];
         var hints = ["Our male hero's name.", "Our female hero's name.", "A very tall mob that's quite shy.", "Isnt it iron ... ?", "Ooooh! shiny!", "This poor guy needs a golden apple.", "Why must their eggs look like stone", "Ummm ... where is the brimstone and sulfer?", "These mobs sound like a dying cat.", "Run or hide my three heads will see you!", "Throw me and enjoy the ride!", "Villagers love these!", "This enchantment will help keep your gear all fixed up."];
         var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+        //var dash = ["-----","----", "--------", "-------", "-------", "--------------", "----------","-------","-----"
 
-        for (var i = 0; i < letters.length; i++) {
-            var letterBtn = $("<button>");
-            letterBtn.addClass("letter-button letter letter-button-color");
-            letterBtn.text(letters[i]);
-            letterBtn.attr("data-letter", letters[i]);
-            $("#buttons").append(letterBtn);
-        }
 
         $("#btn").on("click", function () {
             console.log("START BUTTON CLICKED")
-            document.onkeyup = gameStart();
+            gameStart();
         });
+        for (var i = 0; i < letters.length; i++) {
+            var letterBtn = $("<button>");
+            letterBtn.addClass("letter-button letter letter-button-color");
+            letterBtn.attr("data-letter", letters[i]);
+            letterBtn.text(letters[i]);
+            $("#buttons").append(letterBtn);
+        }
         var gameStart = function startGame() {
+            var type = ""
             var answer = words[Math.floor(Math.random() * words.length)];
             var wordLength = answer.length;
             var guessAmmount = (wordLength + 5);
+            var ansLetter = answer.split("");
+            var hide = ansLetter.fill("-");
             console.log(answer)
             console.log(wordLength);
             console.log(guessAmmount);
-            var ansLetter = answer.split("");
             console.log(ansLetter);
-            var dash = answer.replace(/[a-zA-Z]/g, '-' + ' ');
-            //var slvd = dash.replace(dash[i], ansLetter[i])
 
-            $("#word").append("<" + " " + dash + " " + ">");
-
-            $(".letter-button").on("click", function () {
-                if (letterBtn === (ansLetter[i])) {
-                    dash[i] = ansLetter[i]
-                    $("#word").html("<" + " "+ dash[i] +" " + ">");
-                   // console.log(slvd);
-                }
-                else if (letterBtn !== (ansLetter[i])) {
-                    document.getElementById("creeper").style.right += "100px"
-                }
-            })
+            for (let i = 0; i < words.length; i++) {
+                var hint = answer.indexOf(words) = hints.indexOf(i)
+                $("#hint").append(hint)
+            }
             
+        
+
+            $("#word").append(hide);
+            $(".letter-button").on("click", function () {
+                var type = $(this).attr("data-letter");
+                console.log(type)
+                var getLetter = answer.indexOf(type)
+                    console.log(getLetter)
+                    if (getLetter !== -1) {
+                        var inOrder= ansLetter
+                        $("#word").append(type);
+                    }else {
+                        document.getElementById("creeper").style.right += "50px"
+                    
+                    }
+                    
+                
+                //capture the button click input (data-letter attribute)
+                //check your word for the character that corresponds to the letter
+                // Get the index of the character
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+            //} else if (type !== ansLetter[i])
+            //console.log("you got it wrong")
+            //return $(ansLetter[i]).index(type)
+
+            //for (let i = 0; i < .length; i++) {
+
+
+
+            //if (letterBtn === (ansLetter[i])) {
+            //dash[i] == ansLetter[i]
+            //  console.log(dash);
+
+            //else if (letterBtn !== (ansLetter[i])) {
+            //document.getElementById("creeper").style.right += "100px"
+            //}
+
+
 
 
 
 
         };
-            
-        
+
+
     })
 </script>
 
