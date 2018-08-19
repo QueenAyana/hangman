@@ -19,11 +19,11 @@
         <img id="headimg2" src="assets/images/HANGMAN-GAME.png" alt="">
     </header>
     <div class="inst">
-        Press Any Key To Get Started!!!
+        Press "The Start the Game" To Get Started!!!
 
         <p>
             Test your knowlege of common Minecraft terms. Click the letters that you think will spell out the word. If you get the word
-            right the creeper will be slain! If you fail to get the word right the creeper will explode on our dear heros.
+            right the creeper will be slain! If you fail too many times, the creeper will sneek up on our dear heros and explode.
         </p>
     </div>
     <div class="stats">
@@ -60,7 +60,7 @@
         });
         for (var i = 0; i < letters.length; i++) {
             var letterBtn = $("<button>");
-            letterBtn.addClass("letter-button letter letter-button-color");
+            letterBtn.addClass("letter-button");
             letterBtn.attr("data-letter", letters[i]);
             letterBtn.text(letters[i]);
             $("#buttons").append(letterBtn);
@@ -76,14 +76,7 @@
             console.log(wordLength);
             console.log(guessAmmount);
             console.log(ansLetter);
-
-            for (let i = 0; i < words.length; i++) {
-                var hint = answer.indexOf(words) = hints.indexOf(i)
-                $("#hint").append(hint)
-            }
-            
-        
-
+         
             $("#word").append(hide);
             $(".letter-button").on("click", function () {
                 var type = $(this).attr("data-letter");
@@ -99,44 +92,10 @@
                     }
                     
                 
-                //capture the button click input (data-letter attribute)
-                //check your word for the character that corresponds to the letter
-                // Get the index of the character
+                //when the creeper moves 500px from original spot hide both images and DOM input Boom.png 
 
 
             });
-
-
-
-
-
-
-
-
-
-
-
-
-            //} else if (type !== ansLetter[i])
-            //console.log("you got it wrong")
-            //return $(ansLetter[i]).index(type)
-
-            //for (let i = 0; i < .length; i++) {
-
-
-
-            //if (letterBtn === (ansLetter[i])) {
-            //dash[i] == ansLetter[i]
-            //  console.log(dash);
-
-            //else if (letterBtn !== (ansLetter[i])) {
-            //document.getElementById("creeper").style.right += "100px"
-            //}
-
-
-
-
-
 
         };
 

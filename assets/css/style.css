@@ -63,3 +63,44 @@ body{
 .game{
     margin: 20px 0 40px 0;
 }
+#btn{   
+    font-family: fantasy;
+    text-align: center;
+    background-color:  rgb(90,230,243);;
+    color: darkslateblue;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: 15px 15px 2px 15px;
+    padding: 7px 30px 5px 30px;
+    font-size: 18pt;
+    width: 25%;
+}
+.letter-button{
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    text-align: center;
+    background-color:  rgb(90,230,243);;
+    color: darkslateblue;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 18pt;
+}
+#buttons{
+    margin: 20px;
+}
+p{
+    margin: 15px;
+}
+#word{
+    font-family: fantasy;
+    text-align: center;
+    background-color:  rgb(90,230,243);;
+    color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+    font-size: 26pt;
+    letter-spacing: 2px
+}
